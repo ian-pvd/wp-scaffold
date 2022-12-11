@@ -7,6 +7,9 @@ phpunit.xml
 uploads
 upgrade
 cache
+plugins
+themes/twentytwentytwo
+themes/twentytwentythree
 
 # Project Files
 dist

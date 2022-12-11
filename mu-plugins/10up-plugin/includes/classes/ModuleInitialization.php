@@ -98,21 +98,23 @@ class ModuleInitialization {
 			];
 		}
 
-		// Sort the initialized classes by load order.
-		ksort( $load_class_order );
+		if ( isset( $load_class_order ) ) {
+			// Sort the initialized classes by load order.
+			ksort( $load_class_order );
 
-		// Loop through the classes and initialize them.
-		foreach ( $load_class_order as $class_objects ) {
-			foreach ( $class_objects as $class_object ) {
-				$class = $class_object['class'];
-				$slug  = $class_object['slug'];
+			// Loop through the classes and initialize them.
+			foreach ( $load_class_order as $class_objects ) {
+				foreach ( $class_objects as $class_object ) {
+					$class = $class_object['class'];
+					$slug  = $class_object['slug'];
 
-				// If the class can be registered, register it.
-				if ( $class->can_register() ) {
-					// Call its register method.
-					$class->register();
-					// Store the class in the list of initialized classes.
-					$this->classes[ $slug ] = $class;
+					// If the class can be registered, register it.
+					if ( $class->can_register() ) {
+						// Call its register method.
+						$class->register();
+						// Store the class in the list of initialized classes.
+						$this->classes[ $slug ] = $class;
+					}
 				}
 			}
 		}
