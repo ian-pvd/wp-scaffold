@@ -1,30 +1,30 @@
 {
-  "name": "tenup-wp-scaffold",
-  "version": "1.0.0",
-  "description": "Project Description",
-  "homepage": "https://project-domain.tld",
+  "name": "pvdind-roundhouse",
+  "version": "0.1.0",
+  "description": "A WordPress multimedia site starter.",
+  "homepage": "https://github.com/ian-pvd/wp-scaffold/",
   "repository": {
     "type": "git",
-    "url": "https://project-git-repo.tld"
+    "url": "https://github.com/ian-pvd/wp-scaffold/"
   },
   "workspaces": [
     "themes/*",
-    "mu-plugins/10up-plugin"
+    "mu-plugins/roundhouse-plugin"
   ],
   "scripts": {
     "prepare": "husky install",
     "build": "npm run build --workspaces --if-present",
     "start": "npm run watch",
-    "watch:theme": "npm run watch -w=tenup-theme",
-    "watch:plugin": "npm run watch -w=tenup-plugin",
+    "watch:theme": "npm run watch -w=roundhouse-theme",
+    "watch:plugin": "npm run watch -w=roundhouse-plugin",
     "watch": "run-p watch:theme watch:plugin",
     "test": "npm run test --workspaces --if-present",
     "clean-dist": "npm run clean-dist --if-present"
   },
   "author": {
-    "name": "10up",
-    "email": "info@10up.com",
-    "url": "https://10up.com",
+    "name": "PVD Industrial",
+    "email": "info@pvdindustrial.com",
+    "url": "https://pvdindustrial.com",
     "role": "developer"
   },
   "engineStrict": true,
