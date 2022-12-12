@@ -1,8 +1,12 @@
-# 10up WP Scaffold
+# Roundhouse
 
-This scaffold is the starting point for all 10up WordPress projects.
+A multimedia WordPress site starter theme.
 
-It contains a bare bones theme and must use plugin for you to base your development off of. Asset bundling is handled entirely by [10up Toolkit](https://github.com/10up/10up-toolkit).
+🚂⚙️
+
+## WP Scaffold
+
+This starter theme is based on the [10up WP scaffold](https://github.com/10up/wp-scaffold).
 
 ## Requirements
 
@@ -15,13 +19,12 @@ It contains a bare bones theme and must use plugin for you to base your developm
 2. Take what you need. If your project doesn't have a theme, remove the theme. If your project doesn't need any plugin functionality, remove the MU plugin. If your plugin doesn't need CSS/JS, remove it. If your plugin doesn't need to be translated, remove all the translation functionality.
 3. Compiling, minifying, bundling, etc. of JavaScript and CSS is all done by [10up Toolkit](https://github.com/10up/10up-toolkit). 10up Toolkit is included as a dev dependency in both the plugin and theme. If you want to develop on the theme (and vice-versa the plugin), you would navigate to the theme directory in your console and run `npm run start` (after running `npm install` first of course). Inside `package.json` edit `10up-toolkit.devURL` to your local development URL for if you're not using a `.test`. `10up-toolkit.entry` are the paths to CSS/JS files that need to be bundled. Edit these as needed.
 4. Make sure to add `define( 'SCRIPT_DEBUG', true )` to `wp-config.php` to enable Hot Module Reload and React Fast Refresh.
-5. [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) is used to manage npm dependencies. The main benefit of using npm workspaces is that we can hoist all dependencies to the root folder and avoid installing duplicate dependencies, saving time and space. By default the `workspaces` config are setup so that `mu-plugins/10up-plugin` and all themes are treated as "packages", if you are building a new plugin/theme make sure to update `workspaces` in `package.json` See the example below:
+5. [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) is used to manage npm dependencies. The main benefit of using npm workspaces is that we can hoist all dependencies to the root folder and avoid installing duplicate dependencies, saving time and space. By default the `workspaces` config are setup so that `mu-plugins/roundhouse-plugin` and all themes are treated as "packages", if you are building a new plugin/theme make sure to update `workspaces` in `package.json` See the example below:
 
 ```json
   "workspaces": [
 		"themes/*",
-		"mu-plugins/10up-plugin",
-		"mu-plugins/my-other-awesome-10up-plugin",
+		"mu-plugins/roundhouse-plugin",
   ],
 ```
 6. To build plugins/themes simply run `npm install` at the root and `npm run [build|start|watch]` and npm will automatically build all themes and plugins.
