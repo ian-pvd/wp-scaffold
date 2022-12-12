@@ -28,14 +28,14 @@ This starter theme is based on the [10up WP scaffold](https://github.com/10up/wp
   ],
 ```
 6. To build plugins/themes simply run `npm install` at the root and `npm run [build|start|watch]` and npm will automatically build all themes and plugins.
-7. `npm workspaces` do not have the ability to run scripts from multiple packages in parrallel. Because of that we use the `npm-run-all` package and we define specific scripts in `package.json` so you will need to update the `watch:*` scripts in `package.json` and replace `tenup-theme` and `tenup-plugin` with the actual package names.
+7. `npm workspaces` do not have the ability to run scripts from multiple packages in parrallel. Because of that we use the `npm-run-all` package and we define specific scripts in `package.json` so you will need to update the `watch:*` scripts in `package.json` and replace `roundhouse-theme` and `roundhouse-plugin` with the actual package names.
 
 ```json
-	"watch:theme": "npm run watch -w=tenup-theme",
-	"watch:plugin": "npm run watch -w=tenup-plugin",
+	"watch:theme": "npm run watch -w=roundhouse-theme",
+	"watch:plugin": "npm run watch -w=roundhouse-plugin",
 	"watch": "run-s watch:theme watch:plugin",
 ```
-7. To add npm dependencies to your theme and/or plugins add the `-w=package-name` flag to the `npm install` command. E.g: `npm install --save prop-types -w=tenup-plugin` **DO NOT RUN** `npm install` inside an individual workspace/package. Always run the from the root folder.
+7. To add npm dependencies to your theme and/or plugins add the `-w=package-name` flag to the `npm install` command. E.g: `npm install --save prop-types -w=roundhouse-plugin` **DO NOT RUN** `npm install` inside an individual workspace/package. Always run the from the root folder.
 8. If you're building Gutenberg blocks and importing `@wordpress/*` packages, **you do not** need to manually install them as `10up-toolkit` will handle these packages properly.
 
 ## Scaffold Rules
@@ -44,7 +44,7 @@ Much of the functionality in the scaffold is intended to be optional depending o
 
 1. [10up Toolkit](https://github.com/10up/10up-toolkit) must be used for asset bundling. Over the years we've found differences in how assets are built across projects to be very confusing for engineers.  As such, we are standardizing on 10up Toolkit (which you can extend as needed). 10up Toolkit contains in depth docs on how it works.
 2. Functionality should be built into the 10up must-use functionality as much as possible. Presentation should be kept in the theme. Separating these two makes long term development, maintenance, and extensibility much easier.
-3. Blocks should be built into the theme and follow the [example block](https://github.com/10up/wp-scaffold/tree/trunk/themes/10up-theme/includes/blocks/example-block) provided.
+3. Blocks should be built into the theme and follow the [example block](https://github.com/10up/wp-scaffold/tree/trunk/themes/roundhouse-theme/includes/blocks/example-block) provided.
 5. When creating new themes or plugins make sure to  follow the `scripts` convention:
 ```json
   "scripts": {

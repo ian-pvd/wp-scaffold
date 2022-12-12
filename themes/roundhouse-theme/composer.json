@@ -1,0 +1,19 @@
+{
+  "name": "pvdind/roundhouse-theme",
+  "type": "wordpress-theme",
+  "authors": [
+    {
+      "name": "PVD Industrial",
+      "email": "info@pvdindustrial.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "haydenpierce/class-finder": "^0.4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "RoundhouseTheme\\": "includes/classes/"
+    }
+  }
+}
