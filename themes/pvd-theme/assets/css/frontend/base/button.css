@@ -6,6 +6,9 @@
  *
  * using :where to prevent the specificity increase of using :not
  */
+
+/*
 button:where(:not(.components-button)) {
 
 }
+*/

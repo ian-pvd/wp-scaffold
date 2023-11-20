@@ -1,0 +1,3 @@
+[submodule "plugins/query-monitor"]
+	path = plugins/query-monitor
+	url = https://github.com/johnbillion/query-monitor.git
