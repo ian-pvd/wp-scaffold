@@ -1,9 +1,9 @@
 {
-  "name": "10up/wp-scaffold",
+  "name": "ian-pvd/roundhouse",
   "authors": [
     {
-      "name": "10up",
-      "email": "info@10up.com"
+      "name": "ian-pvd",
+      "email": "pvdindustrial@gmail.com"
     }
   ],
   "require": {

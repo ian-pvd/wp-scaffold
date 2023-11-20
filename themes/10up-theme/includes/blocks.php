@@ -2,12 +2,12 @@
 /**
  * Gutenberg Blocks setup
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 
-namespace TenUpTheme\Blocks;
+namespace RoundhouseTheme\Blocks;
 
-use TenUpTheme\Utility;
+use RoundhouseTheme\Utility;
 
 /**
  * Set up blocks
@@ -28,7 +28,7 @@ function setup() {
 	/*
 	If you are using the block library, remove the blocks you don't need.
 
-	add_filter( 'tenup_available_blocks', function ( $blocks ) {
+	add_filter( 'pvd_available_blocks', function ( $blocks ) {
 		if ( ! empty( $blocks['integrated-hero'] ) ) {
 			unset( $blocks['integrated-hero'] );
 		}
@@ -54,8 +54,8 @@ function register_theme_blocks() {
 	}
 
 	// Register all the blocks in the theme
-	if ( file_exists( TENUP_THEME_BLOCK_DIST_DIR ) ) {
-		$block_json_files = glob( TENUP_THEME_BLOCK_DIST_DIR . '*/block.json' );
+	if ( file_exists( PVD_THEME_BLOCK_DIST_DIR ) ) {
+		$block_json_files = glob( PVD_THEME_BLOCK_DIST_DIR . '*/block.json' );
 
 		// auto register all blocks that were found.
 		foreach ( $block_json_files as $filename ) {
@@ -112,7 +112,7 @@ function filter_plugins_url( $url, $path ) {
 function blocks_editor_styles() {
 	wp_enqueue_style(
 		'editor-style-overrides',
-		TENUP_THEME_TEMPLATE_URL . '/dist/css/editor-style-overrides.css',
+		PVD_THEME_TEMPLATE_URL . '/dist/css/editor-style-overrides.css',
 		[],
 		Utility\get_asset_info( 'editor-style-overrides', 'version' )
 	);
@@ -120,7 +120,7 @@ function blocks_editor_styles() {
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		wp_enqueue_script(
 			'editor-style-overrides',
-			TENUP_THEME_TEMPLATE_URL . '/dist/js/editor-style-overrides.js',
+			PVD_THEME_TEMPLATE_URL . '/dist/js/editor-style-overrides.js',
 			Utility\get_asset_info( 'editor-style-overrides', 'dependencies' ),
 			Utility\get_asset_info( 'editor-style-overrides', 'version' ),
 			true
@@ -140,7 +140,7 @@ function register_block_pattern_categories() {
 
 	// Register a block pattern category
 	register_block_pattern_category(
-		'10up-theme',
-		[ 'label' => __( '10up Theme', 'tenup-theme' ) ]
+		'pvd-theme',
+		[ 'label' => __( 'Roundhouse Theme', 'pvd-theme' ) ]
 	);
 }

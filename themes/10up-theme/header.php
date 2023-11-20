@@ -2,7 +2,7 @@
 /**
  * The template for displaying the header.
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 
 ?>
@@ -16,7 +16,7 @@
 	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
 
-		<a href="#main" class="skip-to-content-link visually-hidden-focusable"><?php esc_html_e( 'Skip to main content', 'tenup-theme' ); ?></a>
+		<a href="#main" class="skip-to-content-link visually-hidden-focusable"><?php esc_html_e( 'Skip to main content', 'pvd-theme' ); ?></a>
 
 		<main id="main" role="main" tabindex="-1">
 

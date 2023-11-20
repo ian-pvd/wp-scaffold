@@ -2,13 +2,13 @@
 /**
  * Template Name: Style Guide
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 
-namespace TenUpTheme\Utility;
+namespace RoundhouseTheme\Utility;
 
-use function TenUpTheme\Utility\adjust_brightness;
-use function TenUpTheme\Utility\get_colors;
+use function RoundhouseTheme\Utility\adjust_brightness;
+use function RoundhouseTheme\Utility\get_colors;
 
 get_header();
 ?>

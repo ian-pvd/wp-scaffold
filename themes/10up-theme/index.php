@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 
 get_header(); ?>

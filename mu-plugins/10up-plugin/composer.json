@@ -1,10 +1,10 @@
 {
-  "name": "10up/wp-plugin",
+  "name": "ian-pvd/wp-plugin",
   "type": "wordpress-plugin",
   "authors": [
     {
-      "name": "10up",
-      "email": "info@10up.com"
+      "name": "ian-pvd",
+      "email": "pvdindustrial@gmail.com"
     }
   ],
   "require": {
@@ -13,7 +13,7 @@
   },
   "autoload": {
     "psr-4": {
-      "TenUpPlugin\\": "includes/classes/"
+      "RoundhousePlugin\\": "includes/classes/"
     },
     "files": [
       "includes/helpers/helpers.php"

@@ -1,5 +1,5 @@
 {
-  "name": "tenup-theme",
+  "name": "pvd-theme",
   "version": "1.0.0",
   "scripts": {
     "start": "npm run watch",
@@ -23,6 +23,7 @@
   },
   "10up-toolkit": {
     "useBlockAssets": true,
+    "devURL": "http://roundhouse.local/",
     "entry": {
       "admin": "./assets/js/admin/admin.js",
       "editor-style-overrides": "./assets/js/admin/editor-style-overrides.js",

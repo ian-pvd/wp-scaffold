@@ -2,10 +2,10 @@
 /**
  * Auto-initialize all Module based classes in the theme.
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 
-namespace TenUpTheme;
+namespace RoundhouseTheme;
 
 use HaydenPierce\ClassFinder\ClassFinder;
 use ReflectionClass;
@@ -13,7 +13,7 @@ use ReflectionClass;
 /**
  * ModuleInitialization class.
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 class ModuleInitialization {
 
@@ -51,18 +51,18 @@ class ModuleInitialization {
 	protected $classes = [];
 
 	/**
-	 * Get all the TenUpTheme plugin classes.
+	 * Get all the RoundhouseTheme plugin classes.
 	 *
 	 * @return array
 	 */
 	protected function get_classes() {
 		$class_finder = new ClassFinder();
-		$class_finder::setAppRoot( TENUP_THEME_PATH );
-		return $class_finder::getClassesInNamespace( 'TenUpTheme', ClassFinder::RECURSIVE_MODE );
+		$class_finder::setAppRoot( PVD_THEME_PATH );
+		return $class_finder::getClassesInNamespace( 'RoundhouseTheme', ClassFinder::RECURSIVE_MODE );
 	}
 
 	/**
-	 * Initialize all the TenUpTheme plugin classes.
+	 * Initialize all the RoundhouseTheme plugin classes.
 	 *
 	 * @return void
 	 */
@@ -88,7 +88,7 @@ class ModuleInitialization {
 			}
 
 			// Make sure the class is a subclass of Module, so we can initialize it.
-			if ( ! $reflection_class->isSubclassOf( '\TenUpTheme\Module' ) ) {
+			if ( ! $reflection_class->isSubclassOf( '\RoundhouseTheme\Module' ) ) {
 				continue;
 			}
 
@@ -138,7 +138,7 @@ class ModuleInitialization {
 	 *
 	 * @param string $class_name The class name & namespace.
 	 *
-	 * @return false|\TenUpTheme\Module
+	 * @return false|\RoundhouseTheme\Module
 	 */
 	public function get_class( $class_name ) {
 		$class_name = $this->slugify_class_name( $class_name );

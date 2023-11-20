@@ -1,5 +1,6 @@
 MIT License
 
+Copyright (c) 2022 PVD Industrial (https://pvdindustrial.com)
 Copyright (c) 2019 10up Inc. (https://10up.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

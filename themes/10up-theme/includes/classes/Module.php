@@ -2,10 +2,10 @@
 /**
  * Module
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 
-namespace TenUpTheme;
+namespace RoundhouseTheme;
 
 /**
  * Module is any feature that conditionally activates based on the current context.

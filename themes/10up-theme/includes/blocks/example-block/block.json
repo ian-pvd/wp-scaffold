@@ -3,8 +3,8 @@
   "apiVersion": 2,
   "title": "Example Block",
   "description": "An Example Block",
-  "textdomain": "tenup-theme",
-  "name": "tenup/example",
+  "textdomain": "pvd-theme",
+  "name": "pvd/example",
   "icon": "feedback",
   "category": "formatting",
   "attributes":{

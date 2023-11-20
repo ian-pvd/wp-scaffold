@@ -2,13 +2,13 @@
 /**
  * Core setup, site hooks and filters.
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 
-namespace TenUpTheme\Core;
+namespace RoundhouseTheme\Core;
 
-use TenUpTheme\ModuleInitialization;
-use TenUpTheme\Utility;
+use RoundhouseTheme\ModuleInitialization;
+use RoundhouseTheme\Utility;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -20,7 +20,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'init', $n( 'init' ), apply_filters( 'tenup_theme_init_priority', 8 ) );
+	add_action( 'init', $n( 'init' ), apply_filters( 'pvd_theme_init_priority', 8 ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
@@ -40,16 +40,16 @@ function setup() {
  * @return void
  */
 function init() {
-	do_action( 'tenup_theme_before_init' );
+	do_action( 'pvd_theme_before_init' );
 
 	// If the composer.json isn't found, trigger a warning.
-	if ( ! file_exists( TENUP_THEME_PATH . 'composer.json' ) ) {
+	if ( ! file_exists( PVD_THEME_PATH . 'composer.json' ) ) {
 		add_action(
 			'admin_notices',
 			function() {
 				$class = 'notice notice-error';
 				/* translators: %s: the path to the plugin */
-				$message = sprintf( __( 'The composer.json file was not found within %s. No classes will be loaded.', 'tenup-theme' ), TENUP_THEME_PATH );
+				$message = sprintf( __( 'The composer.json file was not found within %s. No classes will be loaded.', 'pvd-theme' ), PVD_THEME_PATH );
 
 				printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
 			}
@@ -58,20 +58,20 @@ function init() {
 	}
 
 	ModuleInitialization::instance()->init_classes();
-	do_action( 'tenup_theme_init' );
+	do_action( 'pvd_theme_init' );
 }
 
 /**
  * Makes Theme available for translation.
  *
  * Translations can be added to the /languages directory.
- * If you're building a theme based on "tenup-theme", change the
- * filename of '/languages/TenUpTheme.pot' to the name of your project.
+ * If you're building a theme based on "pvd-theme", change the
+ * filename of '/languages/RoundhouseTheme.pot' to the name of your project.
  *
  * @return void
  */
 function i18n() {
-	load_theme_textdomain( 'tenup-theme', TENUP_THEME_PATH . '/languages' );
+	load_theme_textdomain( 'pvd-theme', PVD_THEME_PATH . '/languages' );
 }
 
 /**
@@ -102,7 +102,7 @@ function theme_setup() {
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary Menu', 'tenup-theme' ),
+			'primary' => esc_html__( 'Primary Menu', 'pvd-theme' ),
 		)
 	);
 }
@@ -120,7 +120,7 @@ function scripts() {
 	 */
 	wp_enqueue_script(
 		'frontend',
-		TENUP_THEME_TEMPLATE_URL . '/dist/js/frontend.js',
+		PVD_THEME_TEMPLATE_URL . '/dist/js/frontend.js',
 		Utility\get_asset_info( 'frontend', 'dependencies' ),
 		Utility\get_asset_info( 'frontend', 'version' ),
 		true
@@ -129,7 +129,7 @@ function scripts() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_script(
 			'styleguide',
-			TENUP_THEME_TEMPLATE_URL . '/dist/js/styleguide.js',
+			PVD_THEME_TEMPLATE_URL . '/dist/js/styleguide.js',
 			Utility\get_asset_info( 'styleguide', 'dependencies' ),
 			Utility\get_asset_info( 'styleguide', 'version' ),
 			true
@@ -145,7 +145,7 @@ function scripts() {
 	 * Uncoment this to use the shared.js file.
 		wp_enqueue_script(
 			'shared',
-			TENUP_THEME_TEMPLATE_URL . '/dist/js/shared.js',
+			PVD_THEME_TEMPLATE_URL . '/dist/js/shared.js',
 			Utility\get_asset_info( 'shared', 'dependencies' ),
 			Utility\get_asset_info( 'shared', 'version' ),
 			true
@@ -162,7 +162,7 @@ function scripts() {
 function admin_scripts() {
 	wp_enqueue_script(
 		'admin',
-		TENUP_THEME_TEMPLATE_URL . '/dist/js/admin.js',
+		PVD_THEME_TEMPLATE_URL . '/dist/js/admin.js',
 		Utility\get_asset_info( 'admin', 'dependencies' ),
 		Utility\get_asset_info( 'admin', 'version' ),
 		true
@@ -172,7 +172,7 @@ function admin_scripts() {
 	 * Uncoment this to use the shared.js file.
 		wp_enqueue_script(
 			'shared',
-			TENUP_THEME_TEMPLATE_URL . '/dist/js/shared.js',
+			PVD_THEME_TEMPLATE_URL . '/dist/js/shared.js',
 			Utility\get_asset_info( 'shared', 'dependencies' ),
 			Utility\get_asset_info( 'shared', 'version' ),
 			true
@@ -186,12 +186,12 @@ function admin_scripts() {
  * @return void
  */
 function core_block_overrides() {
-	$overrides = TENUP_THEME_DIST_PATH . 'js/core-block-overrides.asset.php';
+	$overrides = PVD_THEME_DIST_PATH . 'js/core-block-overrides.asset.php';
 	if ( file_exists( $overrides ) ) {
 		$dep = require_once $overrides;
 		wp_enqueue_script(
 			'core-block-overrides',
-			TENUP_THEME_DIST_URL . 'js/core-block-overrides.js',
+			PVD_THEME_DIST_URL . 'js/core-block-overrides.js',
 			$dep['dependencies'],
 			$dep['version'],
 			true
@@ -208,7 +208,7 @@ function admin_styles() {
 
 	wp_enqueue_style(
 		'admin-style',
-		TENUP_THEME_TEMPLATE_URL . '/dist/css/admin.css',
+		PVD_THEME_TEMPLATE_URL . '/dist/css/admin.css',
 		[],
 		Utility\get_asset_info( 'admin-style', 'version' )
 	);
@@ -217,7 +217,7 @@ function admin_styles() {
 	 * Uncoment this to use the shared.css file.
 		wp_enqueue_style(
 			'shared-style',
-			TENUP_THEME_TEMPLATE_URL . '/dist/css/shared.css',
+			PVD_THEME_TEMPLATE_URL . '/dist/css/shared.css',
 			[],
 			Utility\get_asset_info( 'shared', 'version' )
 		);
@@ -233,7 +233,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'styles',
-		TENUP_THEME_TEMPLATE_URL . '/dist/css/frontend.css',
+		PVD_THEME_TEMPLATE_URL . '/dist/css/frontend.css',
 		[],
 		Utility\get_asset_info( 'frontend', 'version' )
 	);
@@ -241,7 +241,7 @@ function styles() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_style(
 			'styleguide',
-			TENUP_THEME_TEMPLATE_URL . '/dist/css/styleguide.css',
+			PVD_THEME_TEMPLATE_URL . '/dist/css/styleguide.css',
 			[],
 			Utility\get_asset_info( 'styleguide-style', 'version' )
 		);

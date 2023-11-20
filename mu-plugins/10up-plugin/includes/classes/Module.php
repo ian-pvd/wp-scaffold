@@ -2,10 +2,10 @@
 /**
  * Module
  *
- * @package TenUpPlugin
+ * @package RoundhousePlugin
  */
 
-namespace TenUpPlugin;
+namespace RoundhousePlugin;
 
 /**
  * Module is any feature that conditionally activates based on the current context.

@@ -1,10 +1,10 @@
 <?php
 /**
  * Title: Example Pattern
- * Slug: tenup-theme/example
- * Categories: 10up-theme
+ * Slug: pvd-theme/example
+ * Categories: pvd-theme
  *
- * @package TenUpTheme
+ * @package RoundhouseTheme
  */
 
 ?>
