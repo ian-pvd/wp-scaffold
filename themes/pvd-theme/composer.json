@@ -1,0 +1,19 @@
+{
+  "name": "ian-pvd/pvd-theme",
+  "type": "wordpress-theme",
+  "authors": [
+    {
+      "name": "ian-pvd",
+      "email": "pvdindustrial@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "haydenpierce/class-finder": "^0.4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "RoundhouseTheme\\": "includes/classes/"
+    }
+  }
+}

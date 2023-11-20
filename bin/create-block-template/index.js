@@ -14,9 +14,9 @@ module.exports = {
 			html: false,
 		},
 		customBlockJSON: {
-			textdomain: 'tenup',
+			textdomain: 'pvd',
 		},
-		namespace: 'tenup',
+		namespace: 'pvd',
 		wpScripts: false,
 		wpEnv: false,
 		version: false,

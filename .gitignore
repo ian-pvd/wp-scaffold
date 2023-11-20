@@ -12,6 +12,9 @@ cache
 dist
 backstop_data
 
+# Query Monitor's symlink db.php
+db.php
+
 # Editors
 *.esproj
 *.tmproj
